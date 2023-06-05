@@ -9,3 +9,12 @@ Tags: OpenClassrooms Wordpress
 Version: 2023.1685134906
 Updated: 2023-05-26 23:01:46
 */
+
+/*-------------------------*\
+    Header
+\*-------------------------*/
+a.hfe-menu-item:hover{
+    font-size: 13px;
+    font-weight: 700;
+    transform: translate(4px, -2px);
+}
