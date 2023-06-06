@@ -11,6 +11,23 @@ Updated: 2023-05-26 23:01:46
 */
 
 /*-------------------------*\
+    Base & Utilities
+\*-------------------------*/
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    gap: 30px;
+}
+
+
+
+
+/*-------------------------*\
     Header
 \*-------------------------*/
 
@@ -34,6 +51,7 @@ Updated: 2023-05-26 23:01:46
     display: flex;
     flex-direction: column;
     gap: 15px;
+    font-size: 20px;
 }
 
 .form-label{font-size: 20px;}
@@ -61,3 +79,150 @@ Updated: 2023-05-26 23:01:46
 \*-------------------------*/
 .form--contact{gap: 22px;}
 .form-submit--contact{width: 52%;}
+
+
+
+
+/*-------------------------*\
+    Order Page
+\*-------------------------*/
+/*** Products ***/
+.product-img{grid-column: 1 / span 2;}
+
+.quantity{position: relative;}
+
+/* hide defaults btns of input number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.quantity input{
+    display: block;
+    float: left;
+    width: 100%;
+    height: 56px;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.65;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.quantity input:focus{outline: 0;}
+
+.quantity-nav{
+    position: relative;
+    float: left;
+    height: 54px;
+}
+
+.quantity-button{
+    position: relative;
+    border-left: 1px solid #eee;
+    width: 31px;
+    text-align: center;
+    color: #fff;
+    background: #DC9F96;
+    font-size: 13px;
+    line-height: 2;
+    cursor: pointer;
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.quantity-button.quantity-up{
+    position: absolute;
+    height: 28px;
+    top: 0;
+    border-bottom: 1px solid #eee;
+    border-radius: 0 5px 0 0;
+}
+
+.quantity-button.quantity-down{
+    position: absolute;
+    bottom: -2px;
+    height: 28px;
+    border-radius: 0 0 5px 0;
+}
+
+/*** Button OK ***/
+.product-btn a{
+    width: 100%;
+    height: 56px;
+}
+
+
+/****** Order Form ******/
+.form--order{
+    gap: 44px;
+    color: #fff;
+}
+
+.col:nth-child(1){
+    padding-right: 45px;
+    border-right: 1px solid #fff;
+}
+
+.col:nth-child(2){padding-left: 45px;}
+
+
+
+/*-------------------------*\
+    Responsive
+\*-------------------------*/
+/* Mobile small 420px and down */
+@media (max-width: 420px) {
+    .form-title{
+        font-size: 22px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+
+}
+
+/* Laptop */
+@media (max-width: 900px) {
+    .row{
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .col:nth-child(1){
+        padding-right: 0;
+        border-right: none;
+    }
+
+    .col:nth-child(2){padding-left: 0;}
+
+    .form-submit{
+        width: 100%;
+        height: 55px;
+    }
+    
+}
+
+
+/* Laptop/Desktop 1120px and up */
+@media (min-width: 900px) and (max-width: 1120px) {
+    .col:nth-child(1){padding-right: 30px;}
+    .col:nth-child(2){padding-left: 30px;}
+}
