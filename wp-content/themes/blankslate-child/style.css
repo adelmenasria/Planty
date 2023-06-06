@@ -13,8 +13,51 @@ Updated: 2023-05-26 23:01:46
 /*-------------------------*\
     Header
 \*-------------------------*/
-a.hfe-menu-item:hover{
-    font-size: 13px;
-    font-weight: 700;
-    transform: translate(4px, -2px);
+
+
+
+/*-------------------------*\
+    Forms
+\*-------------------------*/
+.contact input:focus-visible,
+.contact textarea:focus-visible{outline: 2px solid #3B8E46;}
+
+.order input:focus-visible,
+.order textarea:focus-visible{outline: 2px solid #D2776A;}
+
+.form{
+    display: flex;
+    flex-direction: column;
 }
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-label{font-size: 20px;}
+
+.form-control{
+    display: inline-block;
+    width: 100%;
+    padding: 25px 20px;
+    border: none;
+    border-radius: 7px !important;
+    font-size: 18px;
+}
+
+.form-submit{
+    align-self: center;
+    width: 198px;
+    height: 55px;
+    border: none;
+    cursor: pointer;
+}
+
+
+/*-------------------------*\
+    Contact Page
+\*-------------------------*/
+.form--contact{gap: 22px;}
+.form-submit--contact{width: 52%;}
