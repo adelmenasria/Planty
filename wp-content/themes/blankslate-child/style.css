@@ -13,6 +13,8 @@ Updated: 2023-05-26 23:01:46
 /*-------------------------*\
     Base & Utilities
 \*-------------------------*/
+body{margin: 0;}
+
 .row{
     display: flex;
     flex-direction: row;
@@ -25,11 +27,73 @@ Updated: 2023-05-26 23:01:46
 }
 
 
-
-
 /*-------------------------*\
     Header
 \*-------------------------*/
+/*
+a.hfe-menu-item:hover{
+    font-size: 13px;
+    font-weight: 700;
+    transform: translate(4px, -2px);
+}
+*/
+
+.header{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 37px;
+    color: #fff;
+    background: #fff;
+}
+
+.header__logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-wrapper{
+    display: flex;
+}
+
+.header__nav{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-left: auto;
+}
+
+.header__nav ul{
+    display: flex;
+    gap: 60px;
+    margin-right: 60px;
+    list-style-type: none;
+}
+
+.header__nav li a{
+    display: inline-block;
+    text-decoration: none;
+    transition: transform .1s ease-out;
+    color: black;
+}
+
+.header__nav li a:hover{
+    font-size: 13px;
+    font-weight: 700 !important;
+    transform: translate(2px, -2px);
+}
+
+.header__button{
+    padding: 30px 76px;
+    font-size: 15px;
+    background: #DC9F96;
+    border: none;
+    border-radius: 0 !important;
+}
+
+.header__button:hover{background: #C02E44;}
 
 
 
@@ -178,15 +242,28 @@ input[type=number]{
 .col:nth-child(2){padding-left: 45px;}
 
 
+/*-------------------------*\
+    Footer
+\*-------------------------*/
+.footer{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.footer__nav-item{
+    color: #000;
+    text-decoration: none;
+}
 
 /*-------------------------*\
     Responsive
 \*-------------------------*/
 /* Mobile small 420px and down */
 @media (max-width: 420px) {
-    .form-title{
-        font-size: 22px !important;
-    }
+    .form-title{font-size: 22px !important;}
 }
 
 /* Mobile */
@@ -201,6 +278,24 @@ input[type=number]{
 
 /* Laptop */
 @media (max-width: 900px) {
+    .header{
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .nav-wrapper{
+        display: flex;
+    }
+
+    .header__nav ul{
+        margin-right: 40px;
+    }
+
+    .header__button{
+        padding: 0 30px;
+    }
+
     .row{
         flex-direction: column;
         gap: 40px;
