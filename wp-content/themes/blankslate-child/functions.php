@@ -1,10 +1,12 @@
 <?php
 /* Not necessary because Blankslate theme doesn't have default styles
-// Enqueue (inherit) parent styles in child theme
-add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
-function enqueue_parent_styles() {
-    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-}
+
+    // Enqueue (inherit) parent styles in child theme
+    add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
+    function enqueue_parent_styles() {
+        wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    }
+
 */
 
 
@@ -32,10 +34,8 @@ function my_navs( $args = '' ) {
 
 
 // Plugin ContactForm7
-
 // Disable p tags
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
-
 // Disable span tags
 add_filter( 'wpcf7_form_elements', 'cf7_disable_span' );
 function cf7_disable_span($content) {
