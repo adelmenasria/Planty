@@ -16,7 +16,7 @@
             <nav id="menu" role="navigation" class="header__nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
                 <?php wp_nav_menu(); ?>
             </nav>
-            <button class="header__button">Commander</button>
+            <button class="header__button" onclick="window.location.href='http://localhost:8888/planty/order';">Commander</button>
         </div>
     </header>
     <div id="container">
