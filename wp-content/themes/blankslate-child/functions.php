@@ -6,20 +6,8 @@ function enqueue_custom_scripts() {
     wp_enqueue_style('child-custom-styles', get_stylesheet_directory_uri() . '/style.css');
     // JS file if page order
     if (is_page('order')) {
-        wp_enqueue_script('child-custom-scripts', get_stylesheet_directory_uri() . '/custom-script.js', array('jquery'), '1.0', true);
+        wp_enqueue_script('child-custom-scripts', get_stylesheet_directory_uri() . '/my-script.js', array('jquery'), '1.0', true);
     }
-}
-
-
-// Plugin ContactForm7
-
-// Disable p tags
-add_filter('wpcf7_autop_or_not', '__return_false');
-// Disable span tags
-add_filter('wpcf7_form_elements', 'cf7_disable_span');
-function cf7_disable_span($content) {
-    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
-    return $content;
 }
 
 
@@ -34,4 +22,15 @@ function display_navs($args = ''){
         $args['menu'] = 5;
     }
     return $args;
+}
+
+
+// Plugin ContactForm7
+// Disable p tags
+add_filter('wpcf7_autop_or_not', '__return_false');
+// Disable span tags
+add_filter('wpcf7_form_elements', 'cf7_disable_span');
+function cf7_disable_span($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+    return $content;
 }
