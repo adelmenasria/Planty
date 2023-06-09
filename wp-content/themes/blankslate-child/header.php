@@ -10,7 +10,7 @@
 <div id="wrapper" class="hfeed">
     <header id="header" class="header" role="banner">
         <a class="header__logo" href="http://localhost:8888/planty/">
-            <img src="http://localhost:8888/planty/wp-content/uploads/2023/05/Logo-2.png" width="201" height="19" alt="Logo Planty">
+            <img src="http://localhost:8888/planty/wp-content/uploads/2023/06/planty-logo.png" width="201" height="19" alt="Logo Planty">
         </a>
         <div class="nav-wrapper">
             <nav id="menu" role="navigation" class="header__nav" itemscope itemtype="https://schema.org/SiteNavigationElement">
