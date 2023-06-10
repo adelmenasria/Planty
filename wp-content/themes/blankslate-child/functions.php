@@ -1,7 +1,7 @@
 <?php
-/* Not necessary because Blankslate theme doesn't have default styles
-
-    // Enqueue (inherit) parent styles in child theme
+/* Not necessary because Blankslate theme doesn't have default styles and we use Elementor as Page Builder
+    
+    // Enqueue (inherit) parent styles for this child theme
     add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
     function enqueue_parent_styles() {
         wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
@@ -10,7 +10,7 @@
 */
 
 
-// Enqueue a JS file in order page only
+// Enqueue a JS file for order page only
 add_action( 'wp_enqueue_scripts', 'my_custom_script' );
 function my_custom_script() {
     if ( is_page( 'order' ) ) {
@@ -20,8 +20,8 @@ function my_custom_script() {
 
 
 // Display menu if user logged-in/out
-add_filter( 'wp_nav_menu_args', 'my_navs' );
-function my_navs( $args = '' ) {
+add_filter( 'wp_nav_menu_args', 'display_navs' );
+function display_navs( $args = '' ) {
     if ( is_user_logged_in() ) {
         // Show logged-in menu
         $args['menu'] = 4;
