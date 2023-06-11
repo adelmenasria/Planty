@@ -45,8 +45,6 @@ body, p{margin: 0;}
 .header__nav{
     display: flex;
     align-items: center;
-    gap: 60px;
-    margin-left: auto;
 }
 
 .header__nav .menu{
@@ -356,10 +354,9 @@ input[type=number]{
 @media (max-width: 420px) {
     .nav-wrapper{gap: 20px;}
 
-    .header__nav ul{
+    .header__nav .menu{
         display: flex;
-        gap: 20px;        
-        list-style-type: none;
+        gap: 20px;
     }
 
     .header__button{padding: 0 8px;}
