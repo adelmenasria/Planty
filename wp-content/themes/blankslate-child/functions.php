@@ -1,20 +1,13 @@
 <?php
-/* Not necessary because Blankslate theme doesn't have default styles and we use Elementor as Page Builder
-    
-    // Enqueue (inherit) parent styles for this child theme
-    add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
-    function enqueue_parent_styles() {
-        wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-    }
 
-*/
-
-
-// Enqueue a JS file for order page only
-add_action( 'wp_enqueue_scripts', 'my_custom_script' );
-function my_custom_script() {
+// Enqueue (inherit) parent styles and our custom css
+add_action('wp_enqueue_scripts', 'theme_enqueue_assets');
+function theme_enqueue_assets() {
+    // Not necessary because Blankslate theme doesn't have default styles and we use Elementor as Page Builder
+    // wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.css', array(), filemtime(get_stylesheet_directory() . '/css/theme.css'));
     if ( is_page( 'order' ) ) {
-        wp_enqueue_script( 'custom-script', get_stylesheet_directory_uri() . '/my-script.js', array( 'jquery' ), '1.0', true );
+        wp_enqueue_script( 'custom-script', get_stylesheet_directory_uri() . '/js/my-script.js', array( 'jquery' ), '1.0', true );
     }
 }
 
