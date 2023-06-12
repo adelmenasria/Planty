@@ -56,7 +56,7 @@ body, p{margin: 0;}
 .header__nav .menu-item:hover {
     font-size: 13px;
     font-weight: 700 !important;
-    transform: translate(2px, -1px);
+    transform: translate(2px, -2px);
 }
 
 .header__nav .current-menu-item {
